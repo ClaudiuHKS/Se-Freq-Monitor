@@ -1,0 +1,10 @@
+﻿cl : command line warning D9035: option 'Zc:forScope-' has been deprecated and will be removed in a future release
+cl : command line warning D9035: option 'Zc:forScope-' has been deprecated and will be removed in a future release
+cl : command line warning D9035: option 'Zc:forScope-' has been deprecated and will be removed in a future release
+  Source.cpp
+  Strings Encryption.CPP
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 232 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  FreqMonitor.vcxproj -> C:\Users\hattr\source\repos\FreqMonitor\Release\FreqMonitor.exe
