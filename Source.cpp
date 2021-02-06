@@ -98,11 +98,11 @@ int main(int n, char** a) noexcept
         ((float)(::std::atof(a[SE_ONE])))
     );
 
-    while (true)
+    while (SE_ONE)
     {
         ::Sleep(::std::atoi(XCS("1024")));
 
-        if ((q = ((float)(::cpuSpeed()))) < ((float)(::std::atof(a[1]))))
+        if ((q = ((float)(::cpuSpeed()))) < ((float)(::std::atof(a[SE_ONE]))))
         {
             ::std::printf
             (
