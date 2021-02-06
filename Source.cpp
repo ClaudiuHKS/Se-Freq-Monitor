@@ -40,6 +40,15 @@ int main(int n, char** a) noexcept
         }
     }
 
+    if (::FindWindowA(nullptr, XCS("Freq Monitor (x86)")))
+    {
+        ::std::exit(SE_ONE), ::std::quick_exit(SE_ONE), ::ExitProcess(SE_ONE), ::std::abort();
+
+        return SE_ONE;
+    }
+
+    ::SetConsoleTitleA(XCS("Freq Monitor (x86)"));
+
     if (!a[SE_ONE] || ::std::atof(a[SE_ONE]) < ::std::atof(XCS("0.1")))
     {
         b.assign(XCS("No Arguments Or Parameters Provided?\n")), \
