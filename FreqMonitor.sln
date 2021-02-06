@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.161
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "FreqMonitor", "FreqMonitor.vcxproj", "{30D6E0E7-CE7F-4965-9073-5A329EA11873}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30D6E0E7-CE7F-4965-9073-5A329EA11873}.Release|x86.ActiveCfg = Release|Win32
+		{30D6E0E7-CE7F-4965-9073-5A329EA11873}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1532C247-191A-44CF-A1FE-415C5E00E785}
+	EndGlobalSection
+EndGlobal
