@@ -6,4 +6,4 @@
 + Needs To Always Be Running While Playing
 + Audio **Alert**
 + Console **Logging**
-+ **BATCH** File **`FreqMonitorShortcutToEditAndRun.BAT`** Which Allows You To Set The Specified **Cpu Frequency** In **MHz**
++ **BATCH** File **`FreqMonitorShortcutToEditAndRun.BAT`** Which Allows You To Set The Specified **Value** In **MHz**
