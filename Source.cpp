@@ -2,6 +2,7 @@
 #include "Requirements.hpp"
 #include "Capabilities.hpp"
 #include "Functions.hpp"
+#include "Signal.hpp"
 
 int main(int n, char** a) noexcept
 {
@@ -12,7 +13,9 @@ int main(int n, char** a) noexcept
     static ::std::size_t i{ };
     static ::std::string b{ };
 
-    ::std::setlocale(SE_TWO, XCS(".utf8")), ::SetPriorityClass(::GetCurrentProcess(), ::std::atoi(XCS("128"))), \
+    ::std::setlocale(SE_TWO, XCS(".utf8")), ::std::signal(SE_TWO, ::sigRecvd), ::std::signal(SE_FOUR, ::sigRecvd), ::std::signal(SE_EIGHT, ::sigRecvd), \
+        ::std::signal(::std::atoi(XCS("11")), ::sigRecvd), ::std::signal(::std::atoi(XCS("15")), ::sigRecvd), ::std::signal(::std::atoi(XCS("21")), ::sigRecvd), \
+        ::std::signal(::std::atoi(XCS("22")), ::sigRecvd), ::SetPriorityClass(::GetCurrentProcess(), ::std::atoi(XCS("128"))), \
         ::SetProcessPriorityBoost(::GetCurrentProcess(), SE_ZERO);
 
     while (!::GetConsoleWindow())

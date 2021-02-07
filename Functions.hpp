@@ -194,11 +194,14 @@ static void toLower(::std::wstring* b) noexcept
 
 static ::std::wstring toUnicode(::std::string i) noexcept
 {
+    static const unsigned int u{ ((unsigned int)(::std::atoi(XCS("65001")))) };
+
     static wchar_t w[4096]{ };
+    static ::std::wstring r{ };
 
     ::MultiByteToWideChar
     (
-        ((unsigned int)(::std::atoi(XCS("65001")))), \
+        u, \
         SE_ZERO, \
         i.c_str(), \
         ::std::atoi(XCS("-1")), \
@@ -206,16 +209,21 @@ static ::std::wstring toUnicode(::std::string i) noexcept
         ::std::atoi(XCS("4095"))
     );
 
-    return ((::std::wstring)(w));
+    r.assign(w);
+
+    return r;
 }
 
 static ::std::string fromUnicode(::std::wstring i) noexcept
 {
+    static const unsigned int u{ ((unsigned int)(::std::atoi(XCS("65001")))) };
+
     static char b[4096]{ };
+    static ::std::string r{ };
 
     ::WideCharToMultiByte
     (
-        ((unsigned int)(::std::atoi(XCS("65001")))), \
+        u, \
         SE_ZERO, \
         i.c_str(), \
         ::std::atoi(XCS("-1")), \
@@ -225,7 +233,9 @@ static ::std::string fromUnicode(::std::wstring i) noexcept
         nullptr
     );
 
-    return ((::std::string)(b));
+    r.assign(b);
+
+    return r;
 }
 
 static ::std::string& replaceAll(::std::string& i, ::std::string f, ::std::string t) noexcept
@@ -848,16 +858,19 @@ static ::std::wstring retrieveSteamUsersFilePathUnicode(void) noexcept
 
 static double cpuSpeed(void) noexcept
 {
-    static ::_LARGE_INTEGER W{ }, S{ }, C{ };
-    static unsigned long long X{ };
+    static const double p{ ((double)(::std::strtod(XCS("1000000.0"), nullptr))) };
+    static const int f{ (int)SE_FIVE };
 
-    ::QueryPerformanceCounter(&S), ::QueryPerformanceFrequency(&W), W.QuadPart >>= SE_FIVE, X = ::__rdtsc();
+    static ::_LARGE_INTEGER w{ }, s{ }, c{ };
+    static unsigned long long x{ };
 
-    do ::QueryPerformanceCounter(&C);
+    ::QueryPerformanceCounter(&s), ::QueryPerformanceFrequency(&w), w.QuadPart >>= f, x = ::__rdtsc();
 
-    while (C.QuadPart - S.QuadPart < W.QuadPart);
+    do ::QueryPerformanceCounter(&c);
 
-    return ((::__rdtsc() - X) << SE_FIVE) / ((double)(::std::strtod(XCS("1000000.0"), nullptr)));
+    while (c.QuadPart - s.QuadPart < w.QuadPart);
+
+    return ((::__rdtsc() - x) << f) / p;
 }
 
 static void resolveLicenses(::std::string f, ::std::string t, ::std::vector < ::std::string > l, \
@@ -974,11 +987,13 @@ static void resolveLicenses(::std::wstring f, ::std::wstring t, ::std::vector < 
 
 static float elapsedSince(::std::clock_t s) noexcept
 {
+    static const ::std::clock_t p{ ((::std::clock_t)(::std::atoi(XCS("1000")))) };
+
     static ::std::clock_t r{ };
 
     r = ::std::clock() - s;
 
-    return ((float)(r)) / ((::std::clock_t)(::std::atoi(XCS("1000"))));
+    return ((float)(r)) / p;
 }
 
 static void freezeForCacheCleared(unsigned long f = (unsigned long) ::std::atoi(XCS("128")), \
