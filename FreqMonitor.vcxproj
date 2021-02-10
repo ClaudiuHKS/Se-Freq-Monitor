@@ -107,6 +107,7 @@
       <AssemblyDebug>false</AssemblyDebug>
       <LargeAddressAware>true</LargeAddressAware>
       <CLRUnmanagedCodeCheck>false</CLRUnmanagedCodeCheck>
+      <FixedBaseAddress>false</FixedBaseAddress>
     </Link>
     <ProjectReference>
       <LinkLibraryDependencies>false</LinkLibraryDependencies>
